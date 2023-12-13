@@ -1,0 +1,255 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-weight: 500;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Inter", sans-serif;
+
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(45deg, #103ce7, #64e9ff);
+  font-weight: 400;
+}
+
+.container {
+  max-width: 130rem;
+  min-height: fit-content;
+  background-color: #fff;
+  border-radius: 9px;
+  padding: 2.2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.logo {
+  height: 8rem;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  font-size: 2.4rem;
+}
+
+.grid--2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.entradas,
+.despesas {
+  margin-bottom: 1rem;
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+  padding: 1.2rem 2.4rem;
+  border-radius: 15px;
+  text-transform: uppercase;
+}
+
+.despesas {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  text-transform: uppercase;
+}
+
+.formularios {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+input,
+select {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+label {
+  font-size: 1.6rem;
+}
+
+.btn-transacoes {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.saldo {
+  display: inline;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+
+.extrato__lista {
+  height: 30rem;
+  width: 50rem;
+  overflow: scroll;
+  border-radius: 1rem;
+  background-color: #eee;
+  color: #252525;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.extrato__item {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  padding: 2rem;
+}
+
+.novo-item {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  .extrato__lista {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 95vw;
+  }
+  .grid--2-cols {
+    display: flex;
+    flex-direction: column;
+  }
+  .entradas,
+  .despesas {
+    width: 50rem;
+  }
+  .extrato__lista {
+    width: 50rem;
+    overflow: auto;
+  }
+  .saldo {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+  }
+
+  .entradas,
+  .despesas {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .extrato__lista {
+    width: 40rem;
+    margin: 0 auto;
+  }
+  .extrato__item {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .extrato__lista {
+    width: 35rem;
+    margin: 0 auto;
+  }
+}

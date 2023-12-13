@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fintech FIAP</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="logo.png" alt="logo" class="logo" />
+      <h1>Controle de Gastos</h1>
+      <div class="grid--2-cols">
+        <div class="transacoes">
+          <div class="entradas">
+            <h2>Receita</h2>
+            <form class="formularios">
+              <label for="valor-entrada">Valor:</label>
+              <input type="number" id="valor-entrada" class="valor__entrada" />
+              <label for="tipo-entrandas">Tipo:</label>
+              <select
+                name="opcoes-entrada"
+                id="tipo-entradas"
+                class="tipo__entrada"
+                required
+              >
+                <option value=""></option>
+                <option value="salario">Salário</option>
+                <option value="bonus">Bonus</option>
+                <option value="investimentos">Investimentos</option>
+                <option value="freelas">Freelas</option>
+                <option value="outros">Outros</option>
+              </select>
+              <button class="btn-transacoes btn-receita">&rarr;</button>
+            </form>
+          </div>
+          <div class="despesas">
+            <h2>Despesas</h2>
+            <form class="formularios">
+              <label for="valor-saida">Valor:</label>
+              <input
+                type="number"
+                id="valor-saida"
+                required
+                class="valor-saida"
+              />
+              <label for="tipo-saida">Tipo:</label>
+              <select name="opcoes-saida" id="tipo-saida" required>
+                <option value=""></option>
+                <option value="supermercado">Supermercado</option>
+                <option value="moradia">Moradia</option>
+                <option value="comida">Comida</option>
+                <option value="entretenimento">entretenimento</option>
+                <option value="roupa">Roupas</option>
+                <option value="outros">Outros</option>
+              </select>
+              <button class="btn-transacoes btn-saida">&rarr;</button>
+            </form>
+          </div>
+
+          <div class="resumo-saldo">
+            <p class="saldo">Saldo:</p>
+          </div>
+        </div>
+        <div class="extrato">
+          <h2>Extratos</h2>
+          <div class="extrato__lista"></div>
+        </div>
+      </div>
+    </div>
+    <script defer src="script.js"></script>
+  </body>
+</html>
